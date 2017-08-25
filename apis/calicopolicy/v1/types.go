@@ -7,7 +7,6 @@ import (
 
 const CalicoPolicyResourcePlural = "CalicoPolicies"
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type CalicoPolicy struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata"`
@@ -16,18 +15,9 @@ type CalicoPolicy struct {
 }
 
 type CalicoPolicyStatus struct {
-	State   CalicoPolicyState `json:"state,omitempty"`
-	Message string            `json:"message,omitempty"`
+	Message string `json:"message,omitempty"`
 }
 
-type CalicoPolicyState string
-
-const (
-	CalicoPolicyStateCreated   CalicoPolicyState = "Created"
-	CalicoPolicyStateProcessed CalicoPolicyState = "Processed"
-)
-
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type CalicoPolicyList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata"`
