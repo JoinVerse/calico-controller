@@ -12,7 +12,7 @@ var (
 )
 
 // GroupName is the group name used in this package.
-const GroupName = "calicopolicy.verse.me"
+const GroupName = "calico.verse.me"
 
 // SchemeGroupVersion is the group version used to register these objects.
 var SchemeGroupVersion = schema.GroupVersion{Group: GroupName, Version: "v1"}
