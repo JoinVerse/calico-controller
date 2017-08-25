@@ -1,7 +1,7 @@
 package client
 
 import (
-	calicopolicyv1 "github.com/JoinVerse/calico-k8s-sync/apis/calicopolicy/v1"
+	calicopolicyv1 "github.com/JoinVerse/calico-controller/apis/calicopolicy/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/serializer"
 	"k8s.io/client-go/rest"

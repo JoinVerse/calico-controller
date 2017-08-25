@@ -9,8 +9,8 @@ import (
 	"sync"
 	"syscall"
 
-	k8sclient "github.com/JoinVerse/calico-k8s-sync/client"
-	"github.com/JoinVerse/calico-k8s-sync/controller"
+	k8sclient "github.com/JoinVerse/calico-controller/client"
+	"github.com/JoinVerse/calico-controller/controller"
 
 	calicoclient "github.com/projectcalico/libcalico-go/lib/client"
 

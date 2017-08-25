@@ -1,4 +1,4 @@
-package: github.com/JoinVerse/calico-k8s-sync
+package: github.com/JoinVerse/calico-controller
 import:
 - package: github.com/projectcalico/libcalico-go
   version: ^1.6.1

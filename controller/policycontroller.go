@@ -10,7 +10,7 @@ import (
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/cache"
 
-	calicopolicyv1 "github.com/JoinVerse/calico-k8s-sync/apis/calicopolicy/v1"
+	calicopolicyv1 "github.com/JoinVerse/calico-controller/apis/calicopolicy/v1"
 
 	calicoapi "github.com/projectcalico/libcalico-go/lib/api"
 	calicoclient "github.com/projectcalico/libcalico-go/lib/client"

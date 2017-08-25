@@ -1,1 +1,1 @@
-# calico-k8s-sync
+# calico-controller
