@@ -12,3 +12,9 @@ pipeline:
     volumes:
       - /root/.docker:/root/.docker
       - /var/run/docker.sock:/var/run/docker.sock
+  deploy-alpha:
+    image: registry.joinverse.com/drone-deploy:a4ed3058001b1fd9fa56369f209492f651e29d61
+    when:
+      branch: ["master"]
+    environment:
+      - ENVIRONMENT_OVERRIDE=alpha
