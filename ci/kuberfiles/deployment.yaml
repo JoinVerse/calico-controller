@@ -21,7 +21,10 @@ spec:
         image: registry.joinverse.com/calico-controller:{{ DOCKER_IMAGE_TAG }}
         env:
         - name: ETCD_ENDPOINTS
-          value: http://calico-etcd:6666
+          valueFrom:
+            configMapKeyRef:
+              key: etcd_endpoints
+              name: calico-config
         resources:
           requests:
             cpu: 10m
