@@ -1,7 +1,7 @@
 package client
 
 import (
-	calicopolicyv1 "github.com/JoinVerse/calico-controller/apis/calicopolicy/v1"
+	calicov1 "github.com/JoinVerse/calico-controller/apis/calico/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/serializer"
 	"k8s.io/client-go/rest"
@@ -9,12 +9,12 @@ import (
 
 func NewClient(cfg *rest.Config) (*rest.RESTClient, *runtime.Scheme, error) {
 	scheme := runtime.NewScheme()
-	if err := calicopolicyv1.AddToScheme(scheme); err != nil {
+	if err := calicov1.AddToScheme(scheme); err != nil {
 		return nil, nil, err
 	}
 
 	config := *cfg
-	config.GroupVersion = &calicopolicyv1.SchemeGroupVersion
+	config.GroupVersion = &calicov1.SchemeGroupVersion
 	config.APIPath = "/apis"
 	config.ContentType = runtime.ContentTypeJSON
 	config.NegotiatedSerializer = serializer.DirectCodecFactory{CodecFactory: serializer.NewCodecFactory(scheme)}

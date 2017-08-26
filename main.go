@@ -49,7 +49,7 @@ func main() {
 	}
 
 	// start a controller on instances of our custom resource
-	polController := controller.CalicoPolicyController{
+	polController := controller.PolicyController{
 		K8sClient:    k8sPolClient,
 		K8sScheme:    k8sScheme,
 		CalicoClient: calicoClient,
