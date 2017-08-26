@@ -1,0 +1,14 @@
+pipeline:
+  build-go:
+    image: golang:1.8
+    commands:
+      - mkdir -p /go/src/github.com/JoinVerse
+      - ln -s $PWD /go/src/github.com/JoinVerse/calico-controller
+      - go get github.com/Masterminds/glide
+      - (cd /go/src/github.com/JoinVerse/calico-controller && glide install && go build)
+      - cp calico-controller ./docker
+  build-docker:
+    image: registry.joinverse.com/docker-builder:dbfba0bcb245d1cabedd23d4ec8b128624e5dd19
+    volumes:
+      - /root/.docker:/root/.docker
+      - /var/run/docker.sock:/var/run/docker.sock
