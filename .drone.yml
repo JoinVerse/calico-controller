@@ -18,3 +18,9 @@ pipeline:
       branch: ["master"]
     environment:
       - ENVIRONMENT_OVERRIDE=alpha
+  deploy-beta:
+    image: registry.joinverse.com/drone-deploy:a4ed3058001b1fd9fa56369f209492f651e29d61
+    when:
+      branch: ["master"]
+    environment:
+      - ENVIRONMENT_OVERRIDE=beta
