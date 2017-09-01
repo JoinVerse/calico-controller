@@ -109,6 +109,9 @@ func (c *HostEnpdointController) onDelete(obj interface{}) {
 	err := c.CalicoClient.HostEndpoints().Delete(calicoapi.HostEndpointMetadata{Name: node.ObjectMeta.Name})
 	if err != nil {
 		fmt.Printf("[HOST ENDPOINT CONTROLLER] Error deleting hostendpoint: %v\n", err)
-		return
+	}
+	err = c.CalicoClient.Nodes().Delete(calicoapi.NodeMetadata{Name: node.ObjectMeta.Name})
+	if err != nil {
+		fmt.Printf("[HOST ENDPOINT CONTROLLER] Error deleting node: %v\n", err)
 	}
 }

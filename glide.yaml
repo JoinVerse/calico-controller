@@ -10,6 +10,7 @@ import:
   subpackages:
   - log
   - swagger
-- package: k8s.io/apiextensions-apiserver
-  subpackages:
-  - pkg/apis/apiextensions/v1beta1
+- package: k8s.io/client-go
+  version: 4a3ab2f5be5177366f8206fd79ce55ca80e417fa
+- package: k8s.io/apimachinery
+  version: b317fa7ec8e0e7d1f77ac63bf8c3ec7b29a2a215
