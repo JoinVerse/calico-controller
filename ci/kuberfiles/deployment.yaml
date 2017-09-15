@@ -14,6 +14,8 @@ spec:
     metadata:
       labels:
         k8s-app: calico-controller
+      annotations:
+        scheduler.alpha.kubernetes.io/critical-pod: ""
     spec:
       serviceAccountName: calico-controller
       containers:
@@ -28,3 +30,11 @@ spec:
         resources:
           requests:
             cpu: 10m
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+      - key: CriticalAddonsOnly
+        operator: Exists
+
