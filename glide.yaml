@@ -1,7 +1,7 @@
 package: github.com/JoinVerse/calico-controller
 import:
 - package: github.com/projectcalico/libcalico-go
-  version: ^1.6.1
+  version: ^1.7.3
   subpackages:
   - lib/api
   - lib/client
